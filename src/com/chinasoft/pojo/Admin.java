@@ -1,6 +1,6 @@
 package com.chinasoft.pojo;
 
-public class admin {
+public class Admin {
 	
 	private String adminId = "";
 	private String adminPasswd = "";
@@ -17,12 +17,12 @@ public class admin {
 	public void setAdminPasswd(String adminPasswd) {
 		this.adminPasswd = adminPasswd;
 	}
-	public admin(String adminId, String adminPasswd) {
+	public Admin(String adminId, String adminPasswd) {
 		super();
 		this.adminId = adminId;
 		this.adminPasswd = adminPasswd;
 	}
-	public admin() {
+	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

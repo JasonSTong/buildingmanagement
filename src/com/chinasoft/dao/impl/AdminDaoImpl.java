@@ -1,16 +1,16 @@
 package com.chinasoft.dao.impl;
 
-import com.chinasoft.dao.adminDao;
+import com.chinasoft.dao.AdminDao;
 
-public class adminDaoImpl implements adminDao {
+public class AdminDaoImpl implements AdminDao {
 
 	@Override
-	public int checkAdminLogin(String adminName, String password) {
+	public int AdminLogin(String adminName, String password) {
 		int flag = 0;
 		if (adminName.equals("admin"))
 			if (password.equals("admin"))
 				flag = 1;
 		return flag;
 	}
-
+	
 }
