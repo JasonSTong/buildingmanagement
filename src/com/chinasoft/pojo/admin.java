@@ -1,6 +1,6 @@
-package com.chinasoft.adminDao;
+package com.chinasoft.pojo;
 
-public class adminLoginDao {
+public class admin {
 	private String adminId = "";
 	private String adminPasswd = "";
 	public String getAdminId() {
@@ -15,7 +15,7 @@ public class adminLoginDao {
 	public void setAdminPasswd(String adminPasswd) {
 		this.adminPasswd = adminPasswd;
 	}
-	public adminLoginDao(String adminId, String adminPasswd) {
+	public admin(String adminId, String adminPasswd) {
 		super();
 		this.adminId = adminId;
 		this.adminPasswd = adminPasswd;
