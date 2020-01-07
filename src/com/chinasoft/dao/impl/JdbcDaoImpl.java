@@ -13,9 +13,9 @@ import com.chinasoft.dao.JdbcDao;
  * */
 public class JdbcDaoImpl implements JdbcDao {
 
-	private final String URL = "jdbc:mysql://47.98.57.181:888/Work/";
-	private final String USERNAME = "Work";
-	private final String PWD = "TfhiLe6ed4WWWLdM";
+	private final String URL = "jdbc:mysql://localhost:3306/Work";
+	private final String USERNAME = "root";
+	private final String PWD = "*963.*963.";
 
 	@Override
 	public int jdbcInsUpDel(String sql) {
@@ -48,7 +48,13 @@ public class JdbcDaoImpl implements JdbcDao {
 		return cont;
 
 	}
-
+	
+	
+	/**
+	 * 
+	 * 数据库查询操作
+	 * 
+	 * **/
 	@Override
 	public int jdbcSel(String sql) {
 		// TODO Auto-generated method stub

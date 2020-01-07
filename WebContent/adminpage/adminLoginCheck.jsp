@@ -12,14 +12,17 @@
 <body>
 	<%
 		request.setCharacterEncoding("utf-8");
-		String adminName = request.getParameter("adminName");
+		String adminName = request.getParameter("LoginName");
 		String password = request.getParameter("password");
 		AdminService adminService =  new AdminServiceImpl();
+		if(adminName != null){
+			if(adminService.CheckAdminLoginCheck(adminName, password)==0)
+				out.print("账号或密码输入错误");
+			else{
+				out.print("登录成功");
+			}
+		}
 		
-		if(adminService.CheckAdminLoginCheck(adminName, password)==0)
-			out.print("账号或密码输入错误");
-		else
-			out.print("登录成功");
 	%>
 </body>
 </html>
