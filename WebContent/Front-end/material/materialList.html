@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -151,6 +152,7 @@
 					<table id="ec_table">
 						<caption>物资管理表</caption>
 						<thead>
+						
 							<tr>
 								<th>选中</th>
 								<th onclick="sortTable('ec_table',1,'string')">物资名称</th>
@@ -162,6 +164,18 @@
 								<th onclick="sortTable('ec_table',7,'string')">物资状态</th>
 								<th>修改</th>
 							</tr>
+								<c:forEach items="${list }" var="Material">
+								<tr>
+								<th>选中</th>
+								<td >${Material.materialName }</td>
+								<td >${Material.materialCount }</td>
+								<td >${Material.materialPrice }</td>
+								<td >${Material.materialInDate }</td>
+								<td >${Material.materialOutDate }</td>
+								<td >${Material.materialStat }</td>
+								<td>修改</td>
+							</tr>
+							</c:forEach>
 						</thead>
 						<tbody>
 							<tr onmousemove="this.className='lightup';"

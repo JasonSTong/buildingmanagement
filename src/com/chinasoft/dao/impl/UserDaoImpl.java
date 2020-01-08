@@ -15,9 +15,9 @@ public class UserDaoImpl implements UserDao{
 	public int userLogin(String userName, String userPass) {
 		int flag = 0;
 		
-		private final String URL = "";
+		final String URL = "";
 		Class.forName("com.mysql.jdbc.Driver");
-		DriverManager.getConnection("jdbc:mysql//47.98.57.181:888/Work", "Word", "TfhiLe6ed4WWWLdM")
+		DriverManager.getConnection("jdbc:mysql//47.98.57.181:888/Work", "Word", "TfhiLe6ed4WWWLdM");
 		
 		return 0;
 	}

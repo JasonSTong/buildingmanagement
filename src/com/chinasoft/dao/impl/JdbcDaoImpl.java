@@ -2,6 +2,7 @@ package com.chinasoft.dao.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -19,7 +20,7 @@ public class JdbcDaoImpl implements JdbcDao {
 
 	@Override
 	public int jdbcInsUpDel(String sql) {
-		Connection connection = null;
+		Connection connection = null;  //建立连接
 		Statement stmt = null;
 		int cont = 0;
 
@@ -57,8 +58,40 @@ public class JdbcDaoImpl implements JdbcDao {
 	 * **/
 	@Override
 	public int jdbcSel(String sql) {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection connection = null;  //建立连接
+		Statement stmt = null;
+		ResultSet rs = null;
+		int cont = 0;
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");	//选择驱动
+			connection = DriverManager.getConnection(URL, USERNAME, PWD); //建立连接
+			stmt = connection.createStatement();	// 发送sql语句（查询）
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {	//SQL异常抛出
+			e.printStackTrace();
+		} catch (Exception e) {	 //根异常抛出
+			e.printStackTrace();
+		} finally {			//关闭连接
+			try {
+				if(rs !=null )
+					rs.close();
+				if (stmt != null)
+					stmt.close();
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return cont;
 	}
 
 
