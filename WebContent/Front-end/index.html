@@ -46,6 +46,10 @@
 							class="textin" /></td>
 					</tr>
 					<tr>
+					验证码:<input name="vcode"/>
+						<img src="code" onclick="this.src='code?'+Math.random();" class="s1" title="点击更换" />
+					</tr>
+					<tr>
 						<td colspan="2"><input name="login" type="submit" value=""
 							class="loginbutton"
 							onmouseover="this.className='loginbuttonover'"
@@ -55,7 +59,7 @@
 							onmouseover="this.className='registerbuttonover'"
 							onmouseout="this.className='registerbutton'"
 							onmousedown="this.className='registerbuttondown'" /></td>
-					</tr>
+					</tr> 
 				</table>
 			</div>
 		</form>

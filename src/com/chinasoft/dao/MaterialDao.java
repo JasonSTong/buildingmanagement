@@ -8,5 +8,5 @@ public interface MaterialDao {
 	/**
 	 * 查询全部物资
 	 * */
-	List<Material> selAll(String sql) ;
+	List<Material> selAll() ;
 }

@@ -15,11 +15,11 @@ public class MaterialDaoImpl implements MaterialDao{
 
 	private final String URL = "jdbc:mysql://localhost:3306/Work";
 	private final String USERNAME = "root";
-	private final String PWD = "Ct981228";
+	private final String PWD = "*963.*963.";
 
 	
 	@Override
-	public List<Material> selAll(String sql) {
+	public List<Material> selAll() {
 		
 		List<Material> list = new ArrayList<>();
 			Connection connection = null;  //建立连接
@@ -30,7 +30,7 @@ public class MaterialDaoImpl implements MaterialDao{
 				Class.forName("com.mysql.jdbc.Driver");	//选择驱动
 				connection = DriverManager.getConnection(URL, USERNAME, PWD); //建立连接
 				stmt = connection.createStatement();	// 发送sql语句（查询）
-				rs = stmt.executeQuery(sql);
+				rs = stmt.executeQuery("select * from rpms_material");
 				
 				while(rs.next()) {
 					list.add(new Material(rs.getInt(1), rs.getString(2),  rs.getInt(3), rs.getFloat(4), rs.getInt(5), rs.getDate(6), rs.getDate(7), rs.getInt(8), rs.getInt(9)));
@@ -54,7 +54,7 @@ public class MaterialDaoImpl implements MaterialDao{
 				}
 			}
 
-		return null;
+		return list;
 	}
 	
 }

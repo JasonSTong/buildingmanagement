@@ -11,9 +11,9 @@ public class MaterialServiceImpl implements MaterialService {
 	private MaterialDao materialDao = new MaterialDaoImpl();
 
 	@Override
-	public List<Material> show(String sql) {
+	public List<Material> show() {
 		
-		return materialDao.selAll(sql);
+		return materialDao.selAll();
 	}
 	
 }
